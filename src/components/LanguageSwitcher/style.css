@@ -1,0 +1,88 @@
+/*// language variables*/
+
+
+:root {
+    --language-width: 55px;
+    --language-height: 30px;
+    --language-focus: #85bffd;
+    --language-border: #ccc;
+    --language-hover: #eee;
+    --language-checked: #ddd;
+    --white: #ffffff;
+}
+
+
+/*// language styles*/
+
+.language {
+    width: calc(var(--language-width) * 2);
+    height: var(--language-height);
+    font-size: 14px;
+    line-height: 1;
+}
+
+.language__container--left,
+.language__container--right {
+    position: relative;
+    float: left;
+    width: var(--language-width);
+    height: var(--language-height);
+    padding: 5px;
+}
+
+.language__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--language-width);
+    height: var(--language-height);
+    border: 1px solid var(--language-border);
+    padding: 7px 8px 5px 0;
+    background-color: var(--white);
+    background-repeat: no-repeat;
+    background-position: 7px 7px;
+    background-size: 14px;
+    text-align: right;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.language__container--left .language__label {
+    border-radius: 4px 0 0 4px;
+}
+
+.language__container--right .language__label {
+    border-left: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.language__control:hover + .language__label,
+.language__control:focus + .language__label {
+    background-color: var(--language-hover);
+}
+
+.language__control:checked + .language__label {
+    background-color: var(--language-checked);
+}
+
+.language__control:focus + .language__label,
+.language__control:checked:focus + .language__label {
+    z-index: 2;
+    outline: 2px solid var(--language-focus);
+    box-shadow: 0 0 8px var(--language-focus);
+}
+
+
+/*// country flags*/
+
+.language__container--fr .language__label {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Russia.png');
+    background-position-y: center;
+}
+
+.language__container--en .language__label {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0b/Flag_of_Uzbekistan.png');
+    background-position-y: center;
+}
